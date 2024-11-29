@@ -88,7 +88,10 @@ export default function BazarPage() {
             size="lg"
           />
 
-          <ContainedList className="starship-list">
+          <ContainedList
+            label="Available Starships:"
+            size="md"
+            className="starship-list">
             {filteredStarships
               .slice(0, currentPageSize)
               .map((starship, index) => (
@@ -107,6 +110,7 @@ export default function BazarPage() {
             itemsPerPageText="Items per page"
             page={currentPage}
             onChange={({ page, pageSize }) => {
+              setSearchTerm('');
               setCurrentPage(page);
               if (pageSize !== currentPageSize) {
                 setCurrentPageSize(pageSize);
