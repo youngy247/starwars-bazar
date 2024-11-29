@@ -15,8 +15,6 @@ export default function Starship({ starship }) {
     }, 3000);
   };
 
-  console.log(starship);
-
   return (
     <section className={'starship'}>
       <h1>{starship.name}</h1>
@@ -26,19 +24,15 @@ export default function Starship({ starship }) {
       <p>
         <strong>Passengers:</strong> {starship.passengers}
       </p>
-
       <p>
         <strong>Cost In Credits:</strong> {starship.cost_in_credits}
       </p>
-
       <p>
         <strong>Manufacturer:</strong> {starship.manufacturer}
       </p>
-
       <p>
         <strong>Model:</strong> {starship.model}
       </p>
-
       <p>
         <strong>Created At:</strong>{' '}
         {new Date(starship.created).toLocaleDateString()}
