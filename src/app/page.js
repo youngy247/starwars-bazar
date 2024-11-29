@@ -1,5 +1,6 @@
-import LandingPage from './home/page';
+import React from 'react';
+import BazarPage from './home/page';
 
 export default function Page() {
-  return <LandingPage />;
+  return <BazarPage />;
 }
