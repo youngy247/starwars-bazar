@@ -47,15 +47,26 @@ export default function Starship({ starship }) {
             onClick={() => setQuantity(quantity - 1)}
             disabled={quantity <= 1}
             size="sm"
-            kind="secondary"></Button>
+            kind="secondary"
+            title={`Decrease quantity of ${starship.name} to quantity of ${
+              quantity - 1
+            }`}
+            iconDescription={`Decrease quantity of ${
+              starship.name
+            } to quantity of ${quantity - 1}`}></Button>
           <span>{quantity}</span>
           <Button
             onClick={() => setQuantity(quantity + 1)}
             hasIconOnly
             renderIcon={Add}
             size="sm"
-            kind='secondary'
-            title="Add to selection"
+            kind="secondary"
+            title={`Increase quantity of ${starship.name} to quantity of ${
+              quantity + 1
+            }`}
+            iconDescription={`Increase quantity of ${
+              starship.name
+            } to quantity of ${quantity + 1}`}
           />
         </div>
         <Button onClick={handleAddToBasket} size="lg" kind="primary">
