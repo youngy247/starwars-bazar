@@ -1,4 +1,5 @@
-import { ToastNotification } from '@carbon/react';
+import { Add, Subtract } from '@carbon/icons-react';
+import { Button, ToastNotification } from '@carbon/react';
 import React, { useState } from 'react';
 
 export default function Starship({ starship }) {
@@ -39,19 +40,28 @@ export default function Starship({ starship }) {
       </p>
 
       <div className={'quantity-container'}>
-        <button
-          onClick={() => setQuantity(quantity - 1)}
-          disabled={quantity <= 1}
-          className="minus">
-          -
-        </button>
-        <span>{quantity}</span>
-        <button onClick={() => setQuantity(quantity + 1)}>+</button>
+        <div className={'quantity-value-container'}>
+          <Button
+            renderIcon={Subtract}
+            hasIconOnly
+            onClick={() => setQuantity(quantity - 1)}
+            disabled={quantity <= 1}
+            size="sm"
+            kind="secondary"></Button>
+          <span>{quantity}</span>
+          <Button
+            onClick={() => setQuantity(quantity + 1)}
+            hasIconOnly
+            renderIcon={Add}
+            size="sm"
+            kind='secondary'
+            title="Add to selection"
+          />
+        </div>
+        <Button onClick={handleAddToBasket} size="lg" kind="primary">
+          BUY
+        </Button>
       </div>
-
-      <button onClick={handleAddToBasket} className={'buy-button'}>
-        BUY
-      </button>
 
       {toastVisible && (
         <ToastNotification
