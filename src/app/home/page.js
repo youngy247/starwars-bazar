@@ -16,6 +16,7 @@ import {
   Pagination,
   Switch,
 } from '@carbon/react';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import Starship from './Product/StarshipProduct';
 
@@ -44,13 +45,15 @@ export default function BazarPage() {
 
   if (loading) {
     return (
-      <Loading
-        role="status"
-        aria-live="assertive"
-        className={'spinner'}
-        data-testid="spinner"
-        withOverlay={false}
-      />
+      <div className="spinner-container">
+        <Loading
+          role="status"
+          aria-live="assertive"
+          className={'spinner'}
+          data-testid="spinner"
+          withOverlay={false}
+        />
+      </div>
     );
   }
 
@@ -60,9 +63,17 @@ export default function BazarPage() {
 
   return (
     <div className="bazar-page-container">
-      <Grid className="bazar-page">
-        <h1>Starwars Bazar</h1>
-        <Column lg={16} md={8} sm={4} className="bazar-page__r1">
+      <Grid className="bazar-page-grid">
+        <div className="bazar-page-header-container">
+          <h1>Starwars Bazar</h1>{' '}
+          <Image
+            src="/favicon.ico"
+            alt="Starwars Bazar Logo"
+            width={58}
+            height={58}
+          />
+        </div>
+        <Column lg={16} md={8} sm={4}>
           {isMobile ? (
             <ComboButton label="Starships">
               <MenuItem label="People" />
@@ -80,14 +91,17 @@ export default function BazarPage() {
             </ContentSwitcher>
           )}
 
-          <ExpandableSearch
-            placeholder="Search Starships"
-            labelText="Search"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            closeButtonLabelText="Clear search input"
-            size="lg"
-          />
+          <div className="bazar-page-search-container">
+            <ExpandableSearch
+              className="search-icon"
+              placeholder="Search Starships"
+              labelText="Search"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              closeButtonLabelText="Clear search input"
+              size="lg"
+            />
+          </div>
 
           <ContainedList
             label="Available Starships:"
