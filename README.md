@@ -27,15 +27,15 @@ The source code is available on GitHub: [Star Wars Bazar Repository](https://git
 
 2. Install dependencies:
 
-```bash
-yarn install
-```
+  ```bash
+  yarn install
+  ```
 
 3. Run the development server:
 
-```bash
-yarn dev
-```
+  ```bash
+  yarn dev
+  ```
 
 Visit the app in your browser at http://localhost:3000.
 
