@@ -20,22 +20,22 @@ The source code is available on GitHub: [Star Wars Bazar Repository](https://git
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/youngy247/starwars-bazar.git
-   cd starwars-bazar
-   ```
+      ```bash
+      git clone https://github.com/youngy247/starwars-bazar.git
+      cd starwars-bazar
+      ```
 
 2. Install dependencies:
 
-  ```bash
-  yarn install
-  ```
+     ```bash
+     yarn install
+     ```
 
 3. Run the development server:
 
-  ```bash
-  yarn dev
-  ```
+     ```bash
+      yarn dev
+     ```
 
 Visit the app in your browser at http://localhost:3000.
 
