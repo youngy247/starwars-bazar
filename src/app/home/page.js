@@ -1,5 +1,6 @@
 'use client';
 
+import ErrorBoundaryWrapper from '@/components/ErrorBoundaryWrapper/ErrorBoundaryWrapper';
 import { useMobile } from '@/hooks/useMobile';
 import { useStarships } from '@/hooks/useStarships';
 import {
@@ -16,7 +17,7 @@ import {
   Switch,
 } from '@carbon/react';
 import React, { useEffect, useState } from 'react';
-import Starship from './Product/Product';
+import Starship from './Product/StarshipProduct';
 
 export default function BazarPage() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -96,7 +97,9 @@ export default function BazarPage() {
               .slice(0, currentPageSize)
               .map((starship, index) => (
                 <ContainedListItem key={index} className="starship-item">
-                  <Starship starship={starship} />
+                  <ErrorBoundaryWrapper>
+                    <Starship starship={starship} />
+                  </ErrorBoundaryWrapper>
                 </ContainedListItem>
               ))}
           </ContainedList>
