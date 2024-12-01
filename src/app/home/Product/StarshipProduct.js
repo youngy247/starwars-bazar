@@ -1,19 +1,14 @@
+import useAddToBasket from '@/hooks/useAddToBasket';
 import { Add, Subtract } from '@carbon/icons-react';
 import { Button, ToastNotification } from '@carbon/react';
 import React, { useState } from 'react';
 
-export default function Starship({ starship }) {
+export default function StarshipProduct({ starship }) {
   const [quantity, setQuantity] = useState(1);
-  const [toastVisible, setToastVisible] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
+  const { toastVisible, toastMessage, addToBasket } = useAddToBasket();
 
   const handleAddToBasket = () => {
-    setToastMessage(`Added ${quantity} ${starship.name}(s) to your basket`);
-    setToastVisible(true);
-
-    setTimeout(() => {
-      setToastVisible(false);
-    }, 3000);
+    addToBasket(quantity, starship.name);
   };
 
   return (
