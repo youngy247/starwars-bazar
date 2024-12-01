@@ -1,0 +1,71 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/colors';
+
+.starship {
+  margin-bottom: $spacing-04;
+  padding: $spacing-04;
+
+  text-align: left;
+
+  width: 100%;
+  max-width: 400px;
+  min-width: 250px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    margin-bottom: $spacing-02;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
+
+  h1 {
+    margin-bottom: $spacing-03;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: colors.$gray-90;
+    text-align: center;
+  }
+
+  p {
+    margin: $spacing-02 0;
+    font-size: 1rem;
+    color: colors.$gray-70;
+  }
+
+  .quantity-container {
+    margin-top: $spacing-06;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin: 0 $spacing-02;
+      font-size: 1rem;
+      color: colors.$gray-80;
+    }
+
+    .quantity-value-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-02;
+      margin-bottom: $spacing-06;
+      overflow: hidden;
+    }
+  }
+
+  .toast-notification {
+    position: fixed;
+    top: $spacing-03;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+}

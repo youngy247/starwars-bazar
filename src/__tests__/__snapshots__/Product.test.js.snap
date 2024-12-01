@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Starship Component matches snapshot 1`] = `
+<section
+  className="starship"
+>
+  <h1>
+    Jedi Interceptor
+  </h1>
+  <p>
+    <strong>
+      Hyperdrive Rating:
+    </strong>
+     
+    1.0
+  </p>
+  <p>
+    <strong>
+      Passengers:
+    </strong>
+     
+    0
+  </p>
+  <p>
+    <strong>
+      Cost In Credits:
+    </strong>
+     
+    320000
+  </p>
+  <p>
+    <strong>
+      Manufacturer:
+    </strong>
+     
+    Kuat Systems Engineering
+  </p>
+  <p>
+    <strong>
+      Model:
+    </strong>
+     
+    Eta-2 Actis-class light interceptor
+  </p>
+  <p>
+    <strong>
+      Created At:
+    </strong>
+     
+    20/12/2014
+  </p>
+  <div
+    className="quantity-container"
+  >
+    <div
+      className="quantity-value-container"
+    >
+      <span
+        className="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--top cds--tooltip cds--icon-tooltip cds--icon-tooltip--disabled"
+        onKeyDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="cds--tooltip-trigger__wrapper"
+        >
+          <button
+            aria-labelledby="tooltip-:r0:"
+            className="cds--btn--icon-only cds--btn cds--btn--sm cds--layout--size-sm cds--btn--secondary cds--btn--disabled"
+            disabled={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseMove={[Function]}
+            onTouchStart={[Function]}
+            title="Decrease quantity of Jedi Interceptor to quantity of 0"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 15H24V17H8z"
+              />
+            </svg>
+          </button>
+        </div>
+        <span
+          aria-hidden="true"
+          className="cds--popover"
+          id="tooltip-:r0:"
+          onMouseEnter={[Function]}
+          role="tooltip"
+        >
+          <span
+            className="cds--popover-content cds--tooltip-content"
+          >
+            Decrease quantity of Jedi Interceptor to quantity of 0
+          </span>
+          <span
+            className="cds--popover-caret"
+          />
+        </span>
+      </span>
+      <span>
+        1
+      </span>
+      <span
+        className="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--top cds--tooltip cds--icon-tooltip"
+        onKeyDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="cds--tooltip-trigger__wrapper"
+        >
+          <button
+            aria-labelledby="tooltip-:r3:"
+            className="cds--btn--icon-only cds--btn cds--btn--sm cds--layout--size-sm cds--btn--secondary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseMove={[Function]}
+            onTouchStart={[Function]}
+            title="Increase quantity of Jedi Interceptor to quantity of 2"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+              />
+            </svg>
+          </button>
+        </div>
+        <span
+          aria-hidden="true"
+          className="cds--popover"
+          id="tooltip-:r3:"
+          onMouseEnter={[Function]}
+          role="tooltip"
+        >
+          <span
+            className="cds--popover-content cds--tooltip-content"
+          >
+            Increase quantity of Jedi Interceptor to quantity of 2
+          </span>
+          <span
+            className="cds--popover-caret"
+          />
+        </span>
+      </span>
+    </div>
+    <button
+      className="cds--btn cds--layout--size-lg cds--btn--primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      BUY
+    </button>
+  </div>
+</section>
+`;

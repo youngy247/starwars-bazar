@@ -1,5 +1,11 @@
-import LandingPage from './home/page';
+import ErrorBoundaryWrapper from '@/components/ErrorBoundaryWrapper/ErrorBoundaryWrapper';
+import React from 'react';
+import BazarPage from './home/page';
 
 export default function Page() {
-  return <LandingPage />;
+  return (
+    <ErrorBoundaryWrapper>
+      <BazarPage />
+    </ErrorBoundaryWrapper>
+  );
 }
