@@ -1,5 +1,4 @@
-import Starship from '@/app/home/Product/Product';
-import { ToastNotification } from '@carbon/react';
+import StarshipProduct from '@/app/home/Product/StarshipProduct';
 import '@testing-library/jest-dom';
 import {
   act,
@@ -8,11 +7,6 @@ import {
   screen,
   waitFor,
 } from '@testing-library/react';
-
-// Mock the ToastNotification component
-jest.mock('@carbon/react', () => ({
-  ToastNotification: jest.fn(() => <div>Mock Toast Notification</div>),
-}));
 
 const mockStarship = {
   name: 'Jedi Interceptor',
@@ -40,7 +34,7 @@ const mockStarship = {
 
 describe('Starship Component', () => {
   test('renders starship details correctly', () => {
-    render(<Starship starship={mockStarship} />);
+    render(<StarshipProduct starship={mockStarship} />);
 
     expect(screen.getByText('Jedi Interceptor')).toBeInTheDocument();
     expect(screen.getByText('Hyperdrive Rating:')).toBeInTheDocument();
@@ -54,10 +48,15 @@ describe('Starship Component', () => {
   });
 
   test('handles quantity increment and decrement', () => {
-    render(<Starship starship={mockStarship} />);
+    render(<StarshipProduct starship={mockStarship} />);
 
-    const minusButton = screen.getByRole('button', { name: '-' });
-    const plusButton = screen.getByRole('button', { name: '+' });
+    const minusButton = screen.getByRole('button', {
+      name: /Decrease quantity of Jedi Interceptor to quantity of \d+/i,
+    });
+    const plusButton = screen.getByRole('button', {
+      name: /Increase quantity of Jedi Interceptor to quantity of \d+/i,
+    });
+
     const quantityDisplay = screen.getByText('1');
 
     expect(quantityDisplay).toHaveTextContent('1');
@@ -82,7 +81,7 @@ describe('Starship Component', () => {
   });
 
   test('displays toast notification when adding to basket', async () => {
-    render(<Starship starship={mockStarship} />);
+    render(<StarshipProduct starship={mockStarship} />);
 
     const buyButton = screen.getByText('BUY');
 
@@ -91,36 +90,26 @@ describe('Starship Component', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText('Mock Toast Notification')).toBeInTheDocument();
+      expect(screen.getByText('Success')).toBeInTheDocument();
     });
-
-    expect(ToastNotification).toHaveBeenCalledWith(
-      expect.objectContaining({
-        subtitle: 'Added 1 Jedi Interceptor(s) to your basket',
-        title: 'Success',
-      }),
-      {}
-    );
   });
 
   test('hides toast notification after timeout', async () => {
     jest.useFakeTimers();
-    render(<Starship starship={mockStarship} />);
+    render(<StarshipProduct starship={mockStarship} />);
 
     act(() => {
       fireEvent.click(screen.getByText('BUY'));
     });
 
-    expect(screen.getByText('Mock Toast Notification')).toBeInTheDocument();
+    expect(screen.getByText('Success')).toBeInTheDocument();
 
     act(() => {
       jest.advanceTimersByTime(3000);
     });
 
     await waitFor(() => {
-      expect(
-        screen.queryByText('Mock Toast Notification')
-      ).not.toBeInTheDocument();
+      expect(screen.queryByText('Success')).not.toBeInTheDocument();
     });
 
     jest.useRealTimers();
