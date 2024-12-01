@@ -2,7 +2,7 @@
 @use './Product/product';
 
 .spinner-container {
-  position: fixed; /* Make it fixed so it stays centered even with dynamic viewport changes */
+  position: fixed; 
   top: 0;
   left: 0;
   right: 0;
