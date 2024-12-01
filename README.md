@@ -65,5 +65,6 @@ Visit the app in your browser at http://localhost:3000.
 ## Future Improvements
 
 - Implement full pagination and search across all results.
-- Fix cart functionality and make the View in Cart popup work as expected.
+- Fix cart functionality and make the View in Cart popup work as expected (linking to cart).
+- Fix category buttons to display new results when clicked. 
 - Implement logging for errors in production using services like Sentry.
