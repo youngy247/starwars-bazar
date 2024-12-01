@@ -17,8 +17,10 @@ function ErrorFallback({ error, resetErrorBoundary }) {
   };
 
   return (
-    <div role="alert">
+    <div className="error-fallback" role="alert">
       <h2>Oops, something went wrong.</h2>
+      {/* In production don't show the error message unless it's from an api call and the responses
+          are mapped to be user friendly */}
       <p>{error.message || 'An unexpected error occurred.'}</p>
       <Button onClick={handleRetry} kind="primary">
         Retry
