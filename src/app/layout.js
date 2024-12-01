@@ -15,6 +15,10 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="description" content={metadata.description} />
         <title>{metadata.title}</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
       </head>
       <body>
         <Providers>{children}</Providers>
