@@ -2,7 +2,7 @@
 @use './Product/product';
 
 .spinner-container {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -46,6 +46,10 @@
       margin-bottom: $spacing-06;
     }
   }
+}
+
+.bazar-page-search-container {
+  max-width: 80%;
 }
 
 .search-icon {
