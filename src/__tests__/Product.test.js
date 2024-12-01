@@ -1,12 +1,7 @@
 import StarshipProduct from '@/app/home/Product/StarshipProduct';
 import '@testing-library/jest-dom';
-import {
-  act,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import renderer from 'react-test-renderer'; 
 
 const mockStarship = {
   name: 'Jedi Interceptor',
@@ -45,6 +40,14 @@ describe('Starship Component', () => {
     expect(screen.getByText('320000')).toBeInTheDocument();
     expect(screen.getByText('Manufacturer:')).toBeInTheDocument();
     expect(screen.getByText('Kuat Systems Engineering')).toBeInTheDocument();
+  });
+
+  // Snapshot test
+  test('matches snapshot', () => {
+    const tree = renderer
+      .create(<StarshipProduct starship={mockStarship} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   test('handles quantity increment and decrement', () => {
