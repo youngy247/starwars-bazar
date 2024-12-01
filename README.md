@@ -2,7 +2,7 @@
 
 Welcome to the Star Wars Bazar App! This application allows users to explore Star Wars starships, view details, and interact with starship purchasing functionality. It is built using **Next.js** and uses **Yarn** as the package manager.
 
-This project is a fork of the final step of the Carbon Design System tutorial, which I used as a foundation for learning the fundamentals of the new Carbon Design System. You can check out the original tutorial [here](https://github.com/carbon-design-system/carbon-tutorial-nextjs/tree/v11-next-step-5).
+This project is a fork of the final step of the Carbon Design System tutorial, which I used as a foundation for learning the fundamentals of the Carbon Design System. You can check out the original tutorial [here](https://github.com/carbon-design-system/carbon-tutorial-nextjs/tree/v11-next-step-5).
 
 You can view the live app at: [Star Wars Bazar App](https://starwars-bazar.vercel.app/)
 
